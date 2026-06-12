@@ -57,7 +57,7 @@ const tagLabels: Record<string, string> = {
                     <div class="mb-3 last:mb-0">
                         <p class="text-sm">
                             {/* 日付を YYYY.MM.DD 形式に変換 */}
-                            {new Date(item.date).toLocaleDateString("ja-JP").replace(/\//g, '.')}
+                            {new Date(item.date).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" }).replace(/\//g, '.')}
                             {/* タグを表示 */}
                             {item.tags && item.tags.map(tag => (
                                 <span class="bg-secondary text-xs px-1 rounded ml-1">
