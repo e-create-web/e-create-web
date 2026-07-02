@@ -67,7 +67,7 @@ const linkableTags = ["記念式典", "社内行事", "アーカイブ"];
                         return hasLink ? (
                             <a href={`/events/${event.id}`} class="event-item block p-4 border border-border rounded-lg hover:shadow-md transition group bg-white" data-tags={tagsString}>
                                 <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
-                                    <span class="text-sm text-text-muted w-24 shrink-0">{new Date(event.date).toLocaleDateString("ja-JP")}</span>
+                                    <span class="text-sm text-text-muted w-24 shrink-0">{new Date(event.date).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}</span>
                                     <div class="flex flex-wrap gap-1">
                                         {event.tags && event.tags.map(tag => (
                                             <span class={`px-2 py-0.5 rounded text-xs ${tagColors[tag] || tagColors["デフォルト"]}`}>{tag}</span>
@@ -81,7 +81,7 @@ const linkableTags = ["記念式典", "社内行事", "アーカイブ"];
                         ) : (
                             <div class="event-item block p-4 border border-border rounded-lg bg-surface-alt" data-tags={tagsString}>
                                 <div class="flex flex-col md:flex-row md:items-center gap-2 mb-2">
-                                    <span class="text-sm text-text-muted w-24 shrink-0">{new Date(event.date).toLocaleDateString("ja-JP")}</span>
+                                    <span class="text-sm text-text-muted w-24 shrink-0">{new Date(event.date).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}</span>
                                     <div class="flex flex-wrap gap-1">
                                         {event.tags && event.tags.map(tag => (
                                             <span class={`px-2 py-0.5 rounded text-xs ${tagColors[tag] || tagColors["デフォルト"]}`}>{tag}</span>

@@ -85,7 +85,7 @@ const tagColors: Record<string, string> = {
                                 /* ▼ 遷移するタグの場合（詳細ページへ） ▼ */
                                 <a href={`/events/${event.id}`} class="block p-3 border-b border-border hover:bg-accent-muted transition rounded-lg group">
                                     <div class="text-xs text-text-muted mb-1 flex items-center flex-wrap gap-1">
-                                        {new Date(event.date).toLocaleDateString("ja-JP")}
+                                        {new Date(event.date).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}
                                         {event.tags && event.tags.map((tag) => (
                                             <span class={`px-2 py-0.5 rounded text-xs ${tagColors[tag] || tagColors["デフォルト"]}`}>
                                                 {tag}
@@ -100,7 +100,7 @@ const tagColors: Record<string, string> = {
                                 /* ▼ 遷移しないタグの場合（お知らせ、Web更新など） ▼ */
                                 <div class="block p-3 border-b border-border rounded-lg bg-surface">
                                     <div class="text-xs text-text-muted mb-1 flex items-center flex-wrap gap-1">
-                                        {new Date(event.date).toLocaleDateString("ja-JP")}
+                                        {new Date(event.date).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })}
                                         {event.tags && event.tags.map((tag) => (
                                             <span class={`px-2 py-0.5 rounded text-xs ${tagColors[tag] || tagColors["デフォルト"]}`}>
                                                 {tag}
